@@ -86,8 +86,21 @@ input[type="number"]::-webkit-inner-spin-button {
 	-webkit-appearance: none;
 }
 
+/* 폰트어섬 별 */
+.fas.fa-star {
+	color: gold;
+}
 
-i,
+.fas.fa-heart {
+	color: red;
+	cursor: pointer;
+}
+
+.fa-check-square {
+	color: #999999;
+}
+
+
 button {
 	cursor: pointer;
 }
@@ -123,7 +136,7 @@ table {
 }
 
 
-
+/* 중앙 */
 .center_alignment {
 	display: flex;
 	justify-content: center;

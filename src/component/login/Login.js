@@ -1,17 +1,41 @@
 import { useEffect, useState, useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import style from './Login.module.css';
+import axios from 'axios';
 
 export function Login() {
   useEffect(() => {
     console.log("로그인 페이지");
   })
+  axios.defaults.withCredentials = true;
+  const navi = useNavigate();
+
+	const submit = async (e)=>{
+		// e.preventDefault();
+
+    const axiosConfig = {
+      headers:{
+          "Content-Type": "application/x-www-form-urlencoded"
+      }
+    }
 
 
-	const submit = (e)=>{
-		e.preventDefault();
 
-		console.log(123);
+    const data = {
+      username : e.target[0].value,
+      password : e.target[1].value,
+    }
+    // const result = await axios.post("/api/login", JSON.stringify(data), axiosConfig);    
+    // const result = await axios.post("/api/createSession", data);
+
+    // console.log(result);
+    // useHistory
+
+
+
+
+
+
 		
 	}
 
@@ -22,7 +46,7 @@ export function Login() {
         <img src="/img/bamin2.png" alt="이미지" className={style.bm_img} />
       </Link>
 
-      <form onSubmit={(e)=>submit(e)}>
+      <form onSubmit={submit}>
         <div className={style.input_wrap}>
           <input type="text" className="input_base" name="username" required placeholder="아이디을 입력해 주세요" maxLength="30" />
         </div>

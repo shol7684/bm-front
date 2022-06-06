@@ -33,11 +33,11 @@
 	margin: 3% auto 7% auto;
 }
 
-input[type="checkbox"] {
+.login_page input[type="checkbox"] {
 	display: none;
 }
 
-input[type="checkbox"]:checked ~ i{
+.login_page input[type="checkbox"]:checked ~ i{
 	color: var(--bm-color);
 }
 
@@ -47,8 +47,7 @@ input[type="checkbox"]:checked ~ i{
 }
 
 .login_page label i {
-   font-size: 2rem;
-	color: #999999; 
+  font-size: 2rem;
    margin-right: 5px;
 }
 
@@ -105,10 +104,6 @@ input[type="checkbox"]:checked ~ i{
 }
 
 @media ( max-width : 767px ) {
-	html {
-		font-size: 58%;
-	}
-	
 	.login_page {
 		width: 99%;
 	}
@@ -145,12 +140,5 @@ input[type="checkbox"]:checked ~ i{
       background-size: cover;
 	}
 
-	
-}
-
-@media (max-width: 480px) {
-	html {
-		font-size: 58%;
-	}
 	
 }

@@ -1,14 +1,13 @@
 import React from 'react'
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { Address } from './../Address';
 import style from './Main.module.css';
+import { MainContext } from './../../context';
 
 
 export function FindAddress() {
+   const {address1, address2, setAddress1, setAddress2} = useContext(MainContext);
 
- 
-   const [address1, setAddress1] = useState("");  // 우편번호
-   const [address2, setAddress2] = useState("");  // 주소
    const [isPopupOpen, setIsPopupOpen] = useState(false);
 
    useEffect(()=>{
@@ -32,7 +31,7 @@ export function FindAddress() {
 
    const setLoaclAddress = (address1, address2)=>{
       // 만료시간  일주일 후
-     const exp = 60 * 60 * 24 * 7;
+     const exp = 1000 * 60 * 60 * 24 * 7;
      const today = +new Date();
 
      const data = {
@@ -71,6 +70,7 @@ export function FindAddress() {
         return null;
      }
   }
+  
 
 
    return (
